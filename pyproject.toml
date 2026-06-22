@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pathwai"
+version = "0.1.0"
+description = "Offline-first LLM planning agent benchmarked against optimal: verifier-guided best-first search over deterministic planning domains (GridWorld, Blocksworld, Delivery) with ground-truth A* baselines."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rana Faraz" }]
+keywords = ["llm", "agents", "planning", "search", "a-star", "heuristic", "blocksworld", "pathfinding"]
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# The offline core has zero runtime dependencies -- pure standard library.
+dependencies = []
+
+[project.optional-dependencies]
+# Optional real-LLM proposer backends (the offline stub needs neither).
+ollama = ["requests>=2.28"]
+openai = ["openai>=1.0"]
+dev = [
+  "pytest>=7.0",
+  "ruff>=0.1",
+]
+
+[project.scripts]
+pathwai = "pathwai.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ranafaraz/PathwAI"
+Repository = "https://github.com/ranafaraz/PathwAI"
+
+[tool.setuptools.packages.find]
+include = ["pathwai*", "evals*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
