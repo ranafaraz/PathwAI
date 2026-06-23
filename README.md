@@ -1,5 +1,9 @@
 # PathwAI
 
+[![Live demo](https://img.shields.io/badge/live%20demo-pathwai.dexdevs.com-brightgreen?logo=rocket)](https://pathwai.dexdevs.com)
+
+> **▶ Live demo: [pathwai.dexdevs.com](https://pathwai.dexdevs.com)** — run it in your browser, free offline backend. Browse all 10 portfolio demos via the *all demos* link.
+
 [![CI](https://github.com/ranafaraz/PathwAI/actions/workflows/ci.yml/badge.svg)](https://github.com/ranafaraz/PathwAI/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
